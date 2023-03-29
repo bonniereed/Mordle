@@ -2,7 +2,7 @@ const tileDisplay = document.querySelector(".tile-container");
 const keyboard = document.querySelector(".key-container");
 const messageDisplay = document.querySelector("message-container");
 
-const wordle = "super";
+const wordle = "SUPER";
 const keys = [
     "Q",
     "W",
@@ -113,7 +113,7 @@ const checkRow = () => {
     if (currentTile === 5) {
         const guess = guessRows[currentRow].join("");
         console.log("guess is " + guess, "wordle is " + wordle);
-        if ((wordle = guess)) {
+        if (wordle === guess) {
             showMessage("Great work!");
         }
     }
@@ -123,4 +123,5 @@ const showMessage = (message) => {
     const messageEl = document.createElement("p");
     messageEl.textContent = message;
     messageDisplay.append(messageEl);
+    setTimeout(() => messageDisplay.removeChild(messageEl), 2000);
 };
