@@ -69,16 +69,29 @@ keys.forEach((key) => {
     buttonEl.addEventListener("click", () => handleClick(key));
     keyboard.append(buttonEl);
 
+    const addLetter = (letter) => {
+        if (currentTile < 5 && currentRow < 6) {
+            const tile = document.getElementById(
+                "guessRow-" + currentRow + "-tile-" + currentTile
+            );
+            tile.textContent = letter;
+            guessRows[currentRow][currentTile] = letter;
+            tile.setAttribute("data", letter);
+            currentTile++;
+            console.log("guessRows", guessRows);
+        }
+    };
+
     const handleClick = (key) => {
         console.log("clicked", key);
+        if (key-- - "<<") {
+            console.log("delete key");
+            return;
+        }
+        if (key === "ENTER") addLetter(key);
         addLetter(key);
+        console.log("check row for matches");
+        return;
     };
+    addLetter(key);
 });
-
-const addLetter = (key) => {
-    const tile = document.getElementById(
-        "guessRow-" + currentRow + "-tile-" + currentTile
-    );
-    tile.textContent = key;
-    currentTile++;
-};
