@@ -95,3 +95,12 @@ keys.forEach((key) => {
     };
     addLetter(key);
 });
+
+const deleteLetter = (letter) => {
+    currentTile--;
+    const tile = document.getElementById(
+        "guessRow-" + currentRow + "-tile-" + currentTile
+    );
+    tile.tileContent = "";
+    guessRows[currentRow][currentTile] = "";
+};
