@@ -82,25 +82,28 @@ keys.forEach((key) => {
         }
     };
 
-    const handleClick = (key) => {
-        console.log("clicked", key);
-        if (key-- - "<<") {
-            console.log("delete key");
+    const handleClick = (letter) => {
+        console.log("clicked", letter);
+        if (letter === "<<") {
+            deleteLetter();
             return;
         }
-        if (key === "ENTER") addLetter(key);
-        addLetter(key);
+        if (letter === "ENTER") addLetter(letter);
+        addLetter(letter);
         console.log("check row for matches");
         return;
+        addLetter(letter);
     };
-    addLetter(key);
 });
 
-const deleteLetter = (letter) => {
-    currentTile--;
-    const tile = document.getElementById(
-        "guessRow-" + currentRow + "-tile-" + currentTile
-    );
-    tile.tileContent = "";
-    guessRows[currentRow][currentTile] = "";
+const deleteLetter = () => {
+    if (currentTile > 0) {
+        currentTile--;
+        const tile = document.getElementById(
+            "guessRow-" + currentRow + "-tile-" + currentTile
+        );
+        tile.textContent = "";
+        guessRows[currentRow][currentTile] = "";
+        tile.setAttribute("data", "");
+    }
 };
