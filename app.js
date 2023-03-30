@@ -32,7 +32,7 @@ const keys = [
     "B",
     "N",
     "M",
-    "<<",
+    "«",
 ];
 
 const guessRows = [
@@ -136,4 +136,17 @@ const showMessage = (message) => {
     messageElement.textContent = message;
     messageDisplay.append(messageElement);
     setTimeout(() => messageDisplay.removeChild(messageElement), 2000);
+};
+
+const flipTile = () => {
+    const rowTiles = document.querySelector(
+        "guessrow-" + currentRow
+    ).childNodes;
+    rowTiles.forEach((tile, index) => {
+        const letterData = tiles.getAttribute("data");
+
+        if (letterData === wordle[index]) {
+            tile.classList.add("");
+        }
+    });
 };
