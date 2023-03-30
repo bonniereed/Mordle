@@ -34,7 +34,7 @@ const keys = [
     "J",
     "K",
     "L",
-    "ENTER",
+    "«",
     "Z",
     "X",
     "C",
@@ -42,7 +42,7 @@ const keys = [
     "B",
     "N",
     "M",
-    "«",
+    "ENTER",
 ];
 const guessRows = [
     ["", "", "", "", ""],
@@ -176,7 +176,7 @@ const flipTile = () => {
     });
 
     guess.forEach((guess, index) => {
-        if (guess.letter == wordle[index]) {
+        if (guess.letter === wordle[index]) {
             guess.color = "green-overlay";
             checkWordle = checkWordle.replace(guess.letter, "");
         }

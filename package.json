@@ -1,0 +1,19 @@
+{
+    "name": "Mordle",
+    "version": "1.0.0",
+    "description": "Wordle Clone",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/bonniereed/Mordle.git"
+    },
+    "author": "Bonnie Reed",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/bonniereed/Mordle/issues"
+    },
+    "homepage": "https://github.com/bonniereed/Mordle#readme"
+}
