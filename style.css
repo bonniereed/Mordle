@@ -77,6 +77,20 @@ body {
     margin: 0;
 }
 
+.green-overlay {
+    background-color: #2f5233;
+    border: none !important;
+}
+
+.yellow-overlay {
+    background-color: #ecf87f;
+    border: none !important;
+}
+
+.grey-overlay {
+    background-color: #b9c8bc;
+    border: none !important;
+}
 .tile.flip {
     animation: 0.5s linear flipping;
 }
