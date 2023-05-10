@@ -116,12 +116,12 @@ const checkRow = () => {
         fetch(`http://localhost:8000/check/?word=${guess}`)
             .then(response => response.json())
             .then(json => {
-                if (json == 'Entry word not found') {
+                if (json === 'Entry word not found') {
                     showMessage('word not in list')
                     return
                 } else {
                     flipTile()
-                    if (wordle == guess) {
+                    if (wordle === guess) {
                         showMessage('Magnificent!')
                         isGameOver = true
                         return
@@ -163,7 +163,7 @@ const flipTile = () => {
     })
 
     guess.forEach((guess, index) => {
-        if (guess.letter == wordle[index]) {
+        if (guess.letter === wordle[index]) {
             guess.color = 'green-overlay'
             checkWordle = checkWordle.replace(guess.letter, '')
         }
